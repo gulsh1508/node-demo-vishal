@@ -3,7 +3,7 @@ const urlp = require("./config.json");
 
 const db = async () => {
   try {
-    await mongoose.connect(urlp.url, {
+    await mongoose.connect(process.env.MONGODB_URI||urlp.url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
